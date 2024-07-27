@@ -21,15 +21,17 @@ const HexagonLottie: React.FC<HexagonLottieProps> = ({ animationUrl }) => {
         path: animationUrl,
       });
 
-      animation.addEventListener('complete', () => {
+      const handleComplete = () => {
         // Reverse the direction when the animation completes
         directionRef.current = -directionRef.current;
         animation.setDirection(directionRef.current);
         animation.play();
-      });
+      };
+
+      animation.addEventListener('complete', handleComplete);
 
       return () => {
-        animation.removeEventListener('complete');
+        animation.removeEventListener('complete', handleComplete);
         animation.destroy(); // Clean up animation on component unmount
       };
     }
