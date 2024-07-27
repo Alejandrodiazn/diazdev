@@ -9,7 +9,7 @@ interface HexagonLottieProps {
 
 const HexagonLottie: React.FC<HexagonLottieProps> = ({ animationUrl }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const directionRef = useRef(1); // 1 for forward, -1 for backward
+  const directionRef = useRef<1 | -1>(1); // 1 for forward, -1 for backward
 
   useEffect(() => {
     if (containerRef.current) {
@@ -23,7 +23,7 @@ const HexagonLottie: React.FC<HexagonLottieProps> = ({ animationUrl }) => {
 
       const handleComplete = () => {
         // Reverse the direction when the animation completes
-        directionRef.current = -directionRef.current;
+        directionRef.current = directionRef.current === 1 ? -1 : 1;
         animation.setDirection(directionRef.current);
         animation.play();
       };
