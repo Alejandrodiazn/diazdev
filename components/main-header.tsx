@@ -83,7 +83,7 @@ export const Header127Defaults: Header127Props = {
   heading: "Hola, soy Díaz",
   description:
     "Soy diseñador web apasionado por crear experiencias digitales únicas y desarrollador con la habilidad de transformar ideas en sitios web funcionales y atractivos.",
-  buttons: [{ title: "Button" }, { title: "Button", variant: "secondary" }],
+  buttons: [{ title: "Buttonnn" }, { title: "Button", variant: "secondary" }],
   firstImage: {
     src: "",
     alt: "Placeholder image 1",
